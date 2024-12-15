@@ -7,16 +7,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
-// Routes
-const employeesRouter = require("./routes/api/employees.js/index.js");
-const schedulesRouter = require("./routes/api/schedules.js");
-
-app.use("/api/employees", employeesRouter);
-app.use("/api/schedules", schedulesRouter);
-
 // Rendered View
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+app.set("vews", "./views");
+
+// Routes
+const employeesRouter = require("./routes/api/employees");
+const schedulesRouter = require("./routes/api/schedules");
+
+app.use("/api/employees", employeesRouter);
+app.use("/api/schedules", schedulesRouter);
 
 app.get("/", (req, res) => {
   res.render("index", { title: "Warehouse Schedule" });
