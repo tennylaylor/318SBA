@@ -1,4 +1,3 @@
-// Shared data arrays
 const employees = [
   { id: 1, name: "Alice", position: "Manager" },
   { id: 2, name: "Bob", position: "Warehouse Worker" },

@@ -14,7 +14,6 @@ router.get("/", (req, res) => {
       (s) => s.shift.toLowerCase() === shift.toLowerCase()
     );
 
-  console.log("GET /api/schedules - Filtered results:", results);
   res.json(results);
 });
 

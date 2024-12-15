@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Warehouse Schedule</title>
   </head>
   <body>
@@ -16,11 +16,6 @@
         <li><%= employee.name %> - <%= employee.position %></li>
         <% }); %>
       </ul>
-      <form action="/api/employees" method="POST">
-        <input type="text" name="name" placeholder="Name" required />
-        <input type="text" name="position" placeholder="Position" required />
-        <button type="submit">Add Employee</button>
-      </form>
     </section>
 
     <section>
