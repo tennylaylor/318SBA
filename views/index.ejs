@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Warehouse Schedule</title>
+  </head>
+  <body>
+    <h1>Warehouse Employee Schedules</h1>
+
+    <section>
+      <h2>Employees</h2>
+      <ul>
+        <% employees.forEach(employee => { %>
+        <li><%= employee.name %> - <%= employee.position %></li>
+        <% }); %>
+      </ul>
+      <form action="/api/employees" method="POST">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="text" name="position" placeholder="Position" required />
+        <button type="submit">Add Employee</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Shifts</h2>
+      <ul>
+        <% shifts.forEach(shift => { %>
+        <li>Employee ID: <%= shift.employeeId %>, Shift: <%= shift.shift %></li>
+        <% }); %>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Schedules</h2>
+      <ul>
+        <% schedules.forEach(schedule => { %>
+        <li>
+          <%= schedule.day %> - <%= schedule.shift %> - Assigned to: <%=
+          schedule.assignedTo %>
+        </li>
+        <% }); %>
+      </ul>
+    </section>
+  </body>
+</html>
